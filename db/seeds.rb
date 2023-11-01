@@ -8,6 +8,5 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-# Create a default user
-User.create(email:"test3@test.com", password:"password", password_confirmation:"password")
-
+User.create(email: 'test@test.com', password: 'password', password_confirmation: 'password')
+User.create(email: 'test1@test.com', password: 'password', password_confirmation: 'password')

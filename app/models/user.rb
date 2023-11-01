@@ -1,7 +1,18 @@
 class User < ApplicationRecord
-  include Devise::JWT::RevocationStrategies::JTIMatcher
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :jwt_authenticatable, :validatable, jwt_revocation_strategy: self
+    has_secure_password
+    validates_presence_of :email
+    validates_uniqueness_of :email
+    validates_presence_of :username
+    validates_presence_of :position
+    validates :status, inclusion: { in: %w(active blocked) }
+
+    attr_accessor :last_login_at
+
+  def last_login_at
+    read_attribute(:last_login_at) || Time.zone.now
+  end
+
+  def last_login_at=(value)
+    write_attribute(:last_login_at, value)
+  end
 end
