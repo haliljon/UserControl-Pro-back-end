@@ -65,7 +65,7 @@ In order to run this project you need:
 
 ### App Screenshot
 
-![screenshot]()
+<img width="1388" alt="Screenshot 2023-11-02 at 1 17 19 AM" src="https://github.com/haliljon/UserControl-Pro/assets/110017001/755c80a8-0a73-4429-b9e2-c59ac5cc878a">
 
 ### Front-end Repository
 
